@@ -61,28 +61,62 @@
             font-weight: 400;
         }
 
-        /* --- PREVIEW AREA (Xử lý thông minh) --- */
-        .preview-container {
+        /* --- CỬA SỔ ỨNG DỤNG (WINDOW FRAME) --- */
+        /* Đây là phần làm đẹp ảnh */
+        .window-frame {
             width: 100%;
-            max-width: 900px;
-            margin-bottom: 50px;
-            border-radius: 12px;
+            max-width: 750px; /* Thu nhỏ lại (cũ là 900px) */
+            background: #1e293b; /* Màu nền của khung cửa sổ */
+            border-radius: 12px; /* Bo góc tròn */
             overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
-            background: #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); /* Đổ bóng sâu hơn */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Viền nhẹ */
+            margin-bottom: 50px;
             position: relative;
-            min-height: 200px; /* Chiều cao tối thiểu để không bị giật layout */
-            display: flex;     /* Để căn giữa placeholder */
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Style cho placeholder khi hiện ra */
+        /* Thanh tiêu đề giả lập (giống MacOS/Windows) */
+        .window-header {
+            background: #334155;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* 3 nút tròn đỏ/vàng/xanh */
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot.red { background: #ef4444; }
+        .dot.yellow { background: #f59e0b; }
+        .dot.green { background: #22c55e; }
+
+        /* Container chứa ảnh bên trong khung */
+        .image-container {
+            position: relative;
+            min-height: 200px; /* Chiều cao tối thiểu */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a; /* Màu nền đen bên trong nếu ảnh chưa load */
+        }
+
+        /* Ảnh thật */
+        .app-screenshot {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Placeholder khi chưa có ảnh */
         .placeholder-image {
             width: 100%;
             aspect-ratio: 16/9;
-            display: flex; /* Mặc định là flex, JS sẽ ẩn đi nếu có ảnh */
+            display: flex; 
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -94,12 +128,6 @@
                 rgba(255,255,255,0.05) 20px
             );
             color: var(--secondary-text);
-        }
-
-        .app-screenshot {
-            width: 100%;
-            display: block;
-            height: auto;
         }
 
         /* FEATURES */
@@ -234,15 +262,21 @@
         <p class="subtitle">Lấy Refresh Token & Đọc Mail Outlook tự động</p>
     </div>
 
-    <div class="preview-container">
-        
-        <img src="screenshot.png" alt="Giao diện phần mềm" class="app-screenshot" id="real-image" onerror="showFallback()">
-        
-        <div class="placeholder-image" id="fallback-box" style="display: none;">
-            <i class="fa-solid fa-image" style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;"></i>
-            <span>Giao diện phần mềm sẽ được cập nhật sớm</span>
+    <div class="window-frame">
+        <div class="window-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
         </div>
-
+        
+        <div class="image-container">
+            <img src="screenshot.png" alt="Giao diện phần mềm" class="app-screenshot" id="real-image" onerror="showFallback()">
+            
+            <div class="placeholder-image" id="fallback-box" style="display: none;">
+                <i class="fa-solid fa-image" style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;"></i>
+                <span>Giao diện phần mềm sẽ được cập nhật sớm</span>
+            </div>
+        </div>
     </div>
 
     <div class="features-section">
@@ -264,7 +298,7 @@
     <div class="requirements-box">
         <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.2rem; margin-top: 2px;"></i>
         <div>
-            <strong>Yêu cầu hệ thống:</strong><br><br>
+            <strong>Yêu cầu hệ thống:</strong><br>
             Tool yêu cầu <strong>.NET 8.0 Desktop Runtime</strong>.<br>
             <span style="font-size: 0.9em; opacity: 0.9;">
                 (Bạn có thể tải bên dưới, hoặc khi mở Tool sẽ tự động thông báo và dẫn link tải nếu máy chưa có).
@@ -298,9 +332,7 @@
 
     <script>
         function showFallback() {
-            // Ẩn ảnh thật đi (vì nó bị lỗi/không có)
             document.getElementById('real-image').style.display = 'none';
-            // Hiện ảnh chờ (placeholder) lên
             document.getElementById('fallback-box').style.display = 'flex';
         }
     </script>
