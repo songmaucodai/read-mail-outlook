@@ -12,7 +12,7 @@
         :root {
             --bg-color: #0f172a;
             --text-color: #f8fafc;
-            --accent-color: #0ea5e9; /* Màu Xanh Dương Outlook */
+            --accent-color: #0ea5e9;
             --secondary-text: #94a3b8;
             --card-bg: rgba(255, 255, 255, 0.03);
             --border-color: rgba(255, 255, 255, 0.1);
@@ -31,7 +31,7 @@
             padding: 40px 20px;
         }
 
-        /* --- LOGO & HEADER --- */
+        /* HEADER */
         .header-section {
             text-align: center;
             margin-bottom: 40px;
@@ -61,7 +61,7 @@
             font-weight: 400;
         }
 
-        /* --- SCREENSHOT AREA --- */
+        /* --- PREVIEW AREA (Xử lý thông minh) --- */
         .preview-container {
             width: 100%;
             max-width: 900px;
@@ -72,11 +72,17 @@
             box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
             background: #1e293b;
             position: relative;
+            min-height: 200px; /* Chiều cao tối thiểu để không bị giật layout */
+            display: flex;     /* Để căn giữa placeholder */
+            justify-content: center;
+            align-items: center;
         }
 
+        /* Style cho placeholder khi hiện ra */
         .placeholder-image {
+            width: 100%;
             aspect-ratio: 16/9;
-            display: flex;
+            display: flex; /* Mặc định là flex, JS sẽ ẩn đi nếu có ảnh */
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -96,11 +102,12 @@
             height: auto;
         }
 
-        /* --- DESCRIPTION --- */
+        /* FEATURES */
         .features-section {
             max-width: 700px;
             text-align: left;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         .features-section h2 {
@@ -138,7 +145,7 @@
             color: var(--accent-color);
         }
 
-        /* --- SYSTEM REQUIREMENTS BOX --- */
+        /* REQUIREMENTS */
         .requirements-box {
             background: rgba(14, 165, 233, 0.1);
             border: 1px solid var(--accent-color);
@@ -151,6 +158,7 @@
             align-items: flex-start;
             gap: 15px;
             max-width: 700px;
+            width: 100%;
         }
 
         .requirements-box a {
@@ -159,7 +167,7 @@
             text-decoration: underline;
         }
 
-        /* --- DOWNLOAD SECTION --- */
+        /* DOWNLOAD */
         .download-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -197,7 +205,7 @@
             color: var(--secondary-text);
         }
 
-        /* Footer */
+        /* FOOTER */
         .footer-nav {
             margin-top: auto;
             display: flex;
@@ -227,10 +235,14 @@
     </div>
 
     <div class="preview-container">
-        <div class="placeholder-image">
+        
+        <img src="screenshot.png" alt="Giao diện phần mềm" class="app-screenshot" id="real-image" onerror="showFallback()">
+        
+        <div class="placeholder-image" id="fallback-box" style="display: none;">
             <i class="fa-solid fa-image" style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;"></i>
             <span>Giao diện phần mềm sẽ được cập nhật sớm</span>
         </div>
+
     </div>
 
     <div class="features-section">
@@ -283,6 +295,15 @@
         <a href="https://songmaucodai.online"><i class="fa-solid fa-arrow-left"></i> Về trang chủ</a>
         <a href="https://github.com/songmaucodai/Read-Mail-Outlook" target="_blank"><i class="fa-brands fa-github"></i> GitHub Project</a>
     </div>
+
+    <script>
+        function showFallback() {
+            // Ẩn ảnh thật đi (vì nó bị lỗi/không có)
+            document.getElementById('real-image').style.display = 'none';
+            // Hiện ảnh chờ (placeholder) lên
+            document.getElementById('fallback-box').style.display = 'flex';
+        }
+    </script>
 
 </body>
 </html>
