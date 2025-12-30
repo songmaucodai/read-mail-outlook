@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="outlook-logo.png" alt="ReadMail Logo" width="120" height="120">
+  <img src="Logo-app.png" alt="ReadMail Logo" width="120" height="120">
 
   # ReadMail Outlook Tool
 
