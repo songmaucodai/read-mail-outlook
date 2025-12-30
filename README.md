@@ -12,7 +12,7 @@
 
   <br>
 
-  [Xem Trang Giới Thiệu & Tải Xuống](https://songmaucodai.github.io/Read-Mail-Outlook/)
+  [Xem Trang Giới Thiệu & Tải Xuống](https://songmaucodai.github.io/read-mail-outlook/)
 
 </div>
 
@@ -38,7 +38,7 @@
 
 Đây là phần mềm dạng **Portable** (Chạy ngay không cần cài đặt).
 
-<a href="https://github.com/songmaucodai/Read-Mail-Outlook/releases/latest/download/Read-Mail-Outlook.zip"><strong>Tải xuống ngay (ZIP)</strong></a>
+<a href="https://github.com/songmaucodai/read-mail-outlook/releases/latest/download/Read-Mail-Outlook.zip"><strong>Tải xuống ngay (ZIP)</strong></a>
 
 **Hướng dẫn:**
 1. Giải nén file `Read-Mail-Outlook.zip` vừa tải về.
