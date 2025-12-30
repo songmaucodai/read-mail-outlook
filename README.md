@@ -18,11 +18,11 @@
 
 ---
 
-## 📖 Giới thiệu
+## Giới thiệu
 
 **Read Mail Outlook** giúp bạn lấy Refresh Token từ tài khoản Microsoft và sử dụng nó để truy cập vào các email trong hộp thư Outlook của bạn. Công cụ hỗ trợ tự động hoá quy trình đăng nhập qua OAuth2.
 
-### ✨ Tính Năng Chính
+### Tính Năng Chính
 * **Lấy Refresh Token:** Tự động lấy và lưu trữ Token để sử dụng lâu dài.
 * **Đọc Email:** Truy xuất 20 email mới nhất (Hộp thư đến & Spam).
 * **Quản lý danh sách:** Hỗ trợ nhập (Import) list tài khoản và chuyển đổi nhanh giữa các email.
@@ -34,16 +34,17 @@
 * **Môi trường:** [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
   > *Lưu ý: Khi mở phần mềm, nếu máy bạn chưa có .NET 8.0, tool sẽ tự động hiện thông báo và dẫn link tải.*
 
-## ⬇️ Tải xuống & Cài đặt
+## Tải xuống & Cài đặt
 
 Đây là phần mềm dạng **Portable** (Chạy ngay không cần cài đặt).
 
-1. Truy cập mục [**Releases**](https://github.com/songmaucodai/Read-Mail-Outlook/releases) bên phải.
-2. Tải file `.zip` phiên bản mới nhất.
-3. Giải nén ra thư mục.
-4. Chạy file `.exe` để bắt đầu sử dụng.
+<a href="https://github.com/songmaucodai/Read-Mail-Outlook/releases/latest/download/Read-Mail-Outlook.zip"><strong>Tải xuống ngay (ZIP)</strong></a>
 
-## ⚖️ Bản quyền
+**Hướng dẫn:**
+1. Giải nén file `Read-Mail-Outlook.zip` vừa tải về.
+2. Mở thư mục, chạy file `.exe` để sử dụng.
+
+## Bản quyền
 
 Phần mềm được phát hành miễn phí (**Freeware**) cho mục đích sử dụng cá nhân.
 Nghiêm cấm mọi hành vi mua bán thương mại hoặc dịch ngược mã nguồn (Reverse Engineering).
